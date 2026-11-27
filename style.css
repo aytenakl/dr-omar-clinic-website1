@@ -83,3 +83,481 @@ header.nav.scrolled{box-shadow:0 10px 30px rgba(11,42,74,.12)}
 .map svg{transition:transform .7s cubic-bezier(.22,1,.36,1)}
 .map:hover svg{transform:scale(1.05)}
 @media (prefers-reduced-motion:reduce){.chip{animation:none}.map svg,.arch{transition:none}}
+
+/* ===== Responsive fixes for Dr. Omar's website ===== */
+
+/* Prevent horizontal overflow */
+html {
+  width: 100%;
+  overflow-x: clip;
+  scroll-padding-top: 80px;
+}
+
+body {
+  width: 100%;
+  min-width: 0;
+  overflow-x: clip;
+}
+
+img,
+iframe {
+  max-width: 100%;
+}
+
+.wrap {
+  width: 100%;
+  min-width: 0;
+}
+
+/* Doctor photo */
+.photo {
+  width: min(100%, 430px);
+  min-width: 0;
+}
+
+.arch {
+  width: 100%;
+  overflow: hidden;
+}
+
+.arch img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+/* Real Google Maps */
+.map {
+  width: 100%;
+  height: 230px;
+  background: var(--sky);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.map iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 230px;
+  border: 0;
+}
+
+/* Cards and clinic layout */
+.cl,
+.grid {
+  min-width: 0;
+}
+
+.clinic {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.tel {
+  flex-wrap: wrap;
+  row-gap: 6px;
+}
+
+.act .pill {
+  min-width: 0;
+  padding-inline: 10px;
+  white-space: normal;
+  text-align: center;
+}
+
+.pill {
+  max-width: 100%;
+  min-height: 44px;
+}
+
+/* Tablet */
+@media (max-width: 820px) {
+  .wrap {
+    padding-inline: 18px;
+  }
+
+  .nav .wrap {
+    height: auto;
+    min-height: 68px;
+    gap: 8px;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .hero {
+    padding-top: 28px;
+  }
+
+  .hero .wrap {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 26px;
+  }
+
+  .hero .wrap > div:first-child {
+    width: 100%;
+    min-width: 0;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: clamp(30px, 7vw, 44px);
+    overflow-wrap: anywhere;
+  }
+
+  .hero p.lead {
+    max-width: 34em;
+    margin-inline: auto;
+  }
+
+  .hero .btns,
+  .hero .stats {
+    justify-content: center;
+  }
+
+  .photo {
+    order: -1;
+    width: min(68%, 290px);
+    margin: 0 auto 8px;
+  }
+
+  .chip {
+    font-size: 13px;
+    padding: 7px 11px;
+  }
+
+  .c1 {
+    inset-inline-start: -5%;
+  }
+
+  .c2 {
+    inset-inline-end: -5%;
+  }
+
+  .ecg {
+    height: 70px;
+    margin-top: 20px;
+  }
+
+  section {
+    padding-block: 58px;
+  }
+
+  .cl {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .cl.one {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .clinic {
+    padding: 18px;
+  }
+
+  .map {
+    height: 210px;
+  }
+
+  .map iframe {
+    min-height: 210px;
+  }
+}
+
+/* Phones: including 400px and narrower */
+@media (max-width: 480px) {
+  .wrap {
+    padding-inline: 14px;
+  }
+
+  .nav .wrap {
+    min-height: 64px;
+    gap: 6px;
+  }
+
+  .logo {
+    gap: 6px;
+    font-size: clamp(12px, 3.5vw, 16px);
+  }
+
+  .logo i {
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+  }
+
+  .tools {
+    gap: 5px;
+    flex-shrink: 0;
+  }
+
+  .tools .pill {
+    padding: 7px 10px;
+    min-height: 40px;
+    font-size: 12px;
+    gap: 5px;
+  }
+
+  .hero {
+    padding-top: 22px;
+  }
+
+  .hero .wrap {
+    gap: 20px;
+  }
+
+  .photo {
+    width: min(62%, 225px);
+    max-width: 225px;
+  }
+
+  .arch {
+    padding: 5px;
+    border-radius: 999px 999px 20px 20px;
+  }
+
+  .arch img {
+    aspect-ratio: 4 / 5;
+    border-radius: 999px 999px 16px 16px;
+    object-position: center 18%;
+  }
+
+  .chip {
+    font-size: 11px;
+    line-height: 1.5;
+    padding: 6px 9px;
+    border-radius: 11px;
+  }
+
+  .c1 {
+    top: 12%;
+    inset-inline-start: -13%;
+  }
+
+  .c2 {
+    top: 45%;
+    inset-inline-end: -13%;
+  }
+
+  .c3 {
+    bottom: 5%;
+    inset-inline-start: -10%;
+  }
+
+  .tag {
+    font-size: 12px;
+    padding: 5px 10px;
+    margin-bottom: 12px;
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    font-size: clamp(29px, 8vw, 36px);
+    line-height: 1.45;
+  }
+
+  .hero p.lead {
+    font-size: 15px;
+    line-height: 1.9;
+    margin-block: 12px 20px;
+  }
+
+  .hero .btns {
+    gap: 8px;
+  }
+
+  .hero .btns .pill {
+    justify-content: center;
+    font-size: 12px;
+    padding: 9px 11px;
+  }
+
+  .stats {
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .stats div {
+    padding-inline-start: 9px;
+    font-size: 11px;
+  }
+
+  .stats b {
+    font-size: 18px;
+    overflow-wrap: anywhere;
+  }
+
+  section {
+    padding-block: 46px;
+  }
+
+  .hd {
+    margin-bottom: 26px;
+  }
+
+  .hd h2 {
+    font-size: 27px;
+  }
+
+  .hd p {
+    font-size: 14px;
+  }
+
+  .grid,
+  .cl,
+  .cl.one {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .grp {
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .grp h3 {
+    font-size: 22px;
+  }
+
+  .clinic {
+    padding: 16px;
+    border-radius: 20px;
+  }
+
+  .clinic h3 {
+    font-size: 19px;
+  }
+
+  .map {
+    height: 210px;
+    margin-block: 12px;
+  }
+
+  .map iframe {
+    min-height: 210px;
+  }
+
+  .addr {
+    font-size: 14px;
+    min-height: 0;
+    line-height: 1.9;
+  }
+
+  .sched {
+    align-items: flex-start;
+    gap: 10px;
+    padding: 11px;
+  }
+
+  .days {
+    gap: 5px;
+  }
+
+  .days span {
+    padding-inline: 9px;
+    font-size: 12px;
+  }
+
+  .sched b {
+    font-size: 13px;
+  }
+
+  .act {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .act .pill {
+    font-size: 12px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .tel {
+    font-size: 14px;
+    gap: 10px;
+  }
+
+  .book {
+    padding: 34px 16px;
+    border-radius: 22px;
+  }
+
+  .book .btns {
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .book .btns .pill {
+    font-size: 12px;
+    padding: 9px 11px;
+  }
+
+  footer {
+    padding-inline: 14px;
+    margin-top: 38px;
+  }
+
+  .float {
+    width: 52px;
+    height: 52px;
+    inset-inline-end: 14px;
+    bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* Very narrow phones */
+@media (max-width: 360px) {
+  .wrap {
+    padding-inline: 10px;
+  }
+
+  .logo {
+    font-size: 11px;
+  }
+
+  .logo i {
+    width: 28px;
+    height: 28px;
+    flex-basis: 28px;
+  }
+
+  .tools .pill {
+    padding-inline: 7px;
+    font-size: 11px;
+  }
+
+  .photo {
+    width: min(65%, 200px);
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .stats {
+    gap: 8px;
+  }
+
+  .clinic {
+    padding: 12px;
+  }
+}
+
+/* Accessibility and motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .arch {
+    transform: none !important;
+  }
+}
