@@ -223,92 +223,95 @@
 
 <body>
 
-  <!-- Header -->
-  <header class="nav">
+<!-- Header -->
+<header class="nav">
+  <div class="wrap">
+
+    <div class="logo">
+      <i aria-hidden="true">
+        <svg class="i" viewBox="0 0 24 24">
+          <path d="M3 12h4l2-6 4 12 2-6h6"
+            fill="none" stroke="#fff" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </i>
+      <span data-k="brand"></span>
+    </div>
+
+    <nav class="links" aria-label="Main navigation">
+      <a href="#services" data-k="n1"></a>
+      <a href="#about" data-k="n2"></a>
+      <a href="#clinics" data-k="n3"></a>
+      <a href="#book" data-k="n4"></a>
+    </nav>
+
+    <div class="tools">
+      <a class="pill fb"
+         href="https://www.facebook.com/share/1GX8bDDPgK/"
+         target="_blank"
+         rel="noopener noreferrer">
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M13.5 21v-7.5H16l.5-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.5V4.4c-.3 0-1.2-.2-2.2-.2-2.2 0-3.9 1.3-3.9 3.8v2.5H8v3h2.5V21h3z"/>
+        </svg>
+        <span data-k="fb"></span>
+      </a>
+    </div>
+
+    <button class="pill" id="lang" type="button"
+            aria-label="Change language">
+      EN
+    </button>
+
+  </div>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <div class="hero">
     <div class="wrap">
 
-      <div class="logo">
-        <i aria-hidden="true">
-          <svg class="i" viewBox="0 0 24 24">
-            <path d="M3 12h4l2-6 4 12 2-6h6"
-              fill="none" stroke="#fff" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </i>
-        <span data-k="brand"></span>
-      </div>
+      <div>
+        <span class="tag" data-k="role"></span>
 
-      <nav class="links" aria-label="Main navigation">
-        <a href="#services" data-k="n1"></a>
-        <a href="#about" data-k="n2"></a>
-        <a href="#clinics" data-k="n3"></a>
-        <a href="#book" data-k="n4"></a>
-      </nav>
-<div class="tools">
-  <a class="pill fb"
-     href="https://www.facebook.com/share/1GX8bDDPgK/"
-     target="_blank"
-     rel="noopener noreferrer">
+        <h1 data-k="name"></h1>
 
-    <svg class="i" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M13.5 21v-7.5H16l.5-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.5V4.4c-.3 0-1.2-.2-2.2-.2-2.2 0-3.9 1.3-3.9 3.8v2.5H8v3h2.5V21h3z"/>
-    </svg>
+        <p class="lead" data-k="lead"></p>
 
-    <span data-k="fb"></span>
-  </a>
-</div>
-        <button class="pill" id="lang" type="button"
-                aria-label="Change language">
-          EN
-        </button>
-      </div>
+        <div class="btns">
+          <a class="pill gold"
+             href="https://wa.me/201096082520"
+             target="_blank"
+             rel="noopener noreferrer"
+             data-k="wa"></a>
 
-    </div>
-  </header>
+          <a class="pill fb"
+             href="https://www.facebook.com/share/1GX8bDDPgK/"
+             target="_blank"
+             rel="noopener noreferrer"
+             data-k="fb2"></a>
 
-  <main>
+          <a class="pill" href="#clinics" data-k="pick"></a>
+        </div>
 
-    <!-- Hero -->
-    <div class="hero">
-      <div class="wrap">
-
-        <div>
-          <span class="tag" data-k="role"></span>
-
-          <h1 data-k="name"></h1>
-
-          <p class="lead" data-k="lead"></p>
-
-          <div class="btns">
-            <a class="pill gold"
-               href="https://wa.me/201096082520"
-               target="_blank" rel="noopener noreferrer"
-               data-k="wa"></a>
-
-            <a class="pill fb" href="FB"
-               target="_blank" rel="noopener noreferrer"
-               data-k="fb2"></a>
-
-            <a class="pill" href="#clinics" data-k="pick"></a>
+        <div class="stats">
+          <div>
+            <b>3</b>
+            <span data-k="s1"></span>
           </div>
 
-          <div class="stats">
-            <div>
-              <b>3</b>
-              <span data-k="s1"></span>
-            </div>
+          <div>
+            <b>4</b>
+            <span data-k="s2"></span>
+          </div>
 
-            <div>
-              <b>4</b>
-              <span data-k="s2"></span>
-            </div>
-
-            <div>
-              <b data-k="s3b"></b>
-              <span data-k="s3"></span>
-            </div>
+          <div>
+            <b data-k="s3b"></b>
+            <span data-k="s3"></span>
           </div>
         </div>
+      </div>
+
 <!-- Doctor photo -->
 <div class="photo">
   <div class="arch">
@@ -330,7 +333,8 @@
     </div>
 
     <!-- Services -->
-    <section id="services">      <div class="wrap">
+    <section id="services">     
+      <div class="wrap">
         <div class="hd rv">
           <h2 data-k="h_s"></h2>
           <p data-k="p_s"></p>
@@ -384,10 +388,11 @@
                href="https://wa.me/201011871948"
                target="_blank" rel="noopener noreferrer"
                data-k="b2"></a>
-
-            <a class="pill fb" href="FB"
-               target="_blank" rel="noopener noreferrer"
-               data-k="fb"></a>
+<a class="pill fb"
+   href="https://www.facebook.com/share/1GX8bDDPgK/"
+   target="_blank"
+   rel="noopener noreferrer"
+   data-k="fb"></a>
           </div>
 
         </div>
